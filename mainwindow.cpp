@@ -26,10 +26,6 @@ bool MainWindow::callbackdest(const PDU &pdu)
     int proto = (int)ip.protocol();
 
 
-
- //  MainWindow *m= new MainWindow();
-  // m->nothing("asd");
-
     std::cout << "Destination address: " << ip.dst_addr() <<" Protocol: "<<proto<< std::endl;
     // Just one packet please
     return true;
@@ -42,7 +38,6 @@ bool MainWindow::callbackport(const PDU &pdu)
 
 
     const TCP tcp = pdu.rfind_pdu<TCP>();
-    //const RawPDU pdu1 = pdu.rfind_pdu<RawPDU>();
     const IP ip = pdu.rfind_pdu<IP>(); // non-const works as well
     int proto = (int)ip.protocol();
     std::cout << "Destination address: " << ip.dst_addr() <<" Protocol: "<<proto<<" Src port:"<<tcp.sport()<<" Dest port:"<<tcp.dport()<< std::endl;
@@ -101,7 +96,3 @@ ui->packetdata->appendPlainText("Sniffing Has Started");
 ui->packetdata->appendHtml("<br/><h1> Check Terminal");
 }
 
-void MainWindow::nothing(char *s){
-    std::cout<<"ada.asd.das.sdas.d";
-    ui->packetdata->appendPlainText("HEYYYYYYY");
-}

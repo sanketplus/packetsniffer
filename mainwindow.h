@@ -20,9 +20,6 @@ public:
     static bool callbackport(const Tins::PDU &pdu);
     static bool callbackdest(const Tins::PDU &pdu);
 
-    void nothing(char *s);
-
-
 private slots:
     void on_pushButton_clicked();
 
